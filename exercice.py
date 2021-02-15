@@ -7,7 +7,7 @@ def order(values: list = None) -> list:
         # TODO: demander les valeurs ici
         values = []
         while len(values) < 5:
-            values.append(int(input("Entrez une valeur: \n")))
+            values.append(input("Entrez une valeur: \n"))
 
     return sorted(values)
 
