@@ -5,9 +5,11 @@
 def order(values: list = None) -> list:
     if values is None:
         # TODO: demander les valeurs ici
-        pass
+        values = []
+        while len(values) < 5:
+            values.append(input("Entrez une valeur: \n"))
 
-    return []
+    return sorted(values)
 
 
 def anagrams(words: list = None) -> bool:
@@ -46,7 +48,7 @@ def print_recipe(ingredients) -> None:
 
 def main() -> None:
     print(f"On essaie d'ordonner les valeurs...")
-    order()
+    print(order())
 
     print(f"On vérifie les anagrammes...")
     anagrams()
