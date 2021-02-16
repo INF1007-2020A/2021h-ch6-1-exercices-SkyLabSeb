@@ -16,13 +16,11 @@ def anagrams(words: list = None) -> bool:
     if words is None:
         # TODO: demander les mots ici
         words = []
-        words.extend([input("Entrez un premier mot: \n"), input("Entrez un deuxième mot: \n")])
+        while len(words) < 2:
+            words.append(input("Entrez un mot: \n"))
 
-    words1 = list(words[0])
-    words2 = list(words[1])
-    words1.sort()
-    words2.sort()
-    print(words1 == words2)
+    return sorted(words[0]) == sorted(words[1])
+
 
 
 def contains_doubles(items: list) -> bool:
@@ -56,7 +54,7 @@ def main() -> None:
     ##  print(order())
 
     print(f"On vérifie les anagrammes...")
-    anagrams()
+    print(anagrams())
 
     my_list = [3, 3, 5, 6, 1, 1]
     print(f"Ma liste contient-elle des doublons? {contains_doubles(my_list)}")
