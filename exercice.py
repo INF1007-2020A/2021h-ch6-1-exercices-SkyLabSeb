@@ -15,9 +15,14 @@ def order(values: list = None) -> list:
 def anagrams(words: list = None) -> bool:
     if words is None:
         # TODO: demander les mots ici
-        pass
+        words = []
+        words.extend([input("Entrez un premier mot: \n"), input("Entrez un deuxième mot: \n")])
 
-    return False
+    words1 = list(words[0])
+    words2 = list(words[1])
+    words1.sort()
+    words2.sort()
+    print(words1 == words2)
 
 
 def contains_doubles(items: list) -> bool:
@@ -48,7 +53,7 @@ def print_recipe(ingredients) -> None:
 
 def main() -> None:
     print(f"On essaie d'ordonner les valeurs...")
-    print(order())
+    ##  print(order())
 
     print(f"On vérifie les anagrammes...")
     anagrams()
